@@ -32,6 +32,7 @@ Current stage:
 
 ## Folder Structure
 
+```text
 portfolio-contact/
 ├── frontend/
 │ ├── src/
@@ -48,6 +49,7 @@ portfolio-contact/
 │ └── package.json
 ├── .gitignore
 └── README.md
+```
 
 ## Getting Started (Frontend)
 
