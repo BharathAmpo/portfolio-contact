@@ -66,21 +66,21 @@ npm run dev
 The application will be available at the URL shown in the terminal.
 ```
 
-##Learning Goals
- -Understand React project structure
- -Practice component-based architecture
- -Build a clean frontend foundation
- -Prepare for backend and database integration
- -Follow disciplined Git commit practices
+## Learning Goals
+- Understand React project structure
+- Practice component-based architecture
+- Build a clean frontend foundation
+- Prepare for backend and database integration
+- Follow disciplined Git commit practices
 
-##Planned Features
- -Responsive portfolio layout
- -Projects showcase section
- -Contact form with validation
- -Backend API for contact submissions
- -MySQL database integration
+## Planned Features
+- Responsive portfolio layout
+- Projects showcase section
+- Contact form with validation
+- Backend API for contact submissions
+- MySQL database integration
 
-##Notes
- -No UI libraries are used intentionally
- -Backend and database will be added in later stages
+## Notes
+- No UI libraries are used intentionally
+- Backend and database will be added in later stages
 
