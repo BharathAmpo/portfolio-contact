@@ -1,0 +1,38 @@
+.header {
+    padding: 1.5rem 1rem;
+    background-color: #0f172a;
+    color: #ffffff;
+}
+
+.container {
+    max-width: 100%;
+}
+
+.name {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0;
+    text-align: center;
+}
+
+.role {
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    color: #cbd5f5;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+    .name {
+        font-size: 2rem;
+    }
+
+    .role {
+        font-size: 1.125rem;
+    }
+}
