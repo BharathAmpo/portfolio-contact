@@ -9,10 +9,12 @@ This project focuses on learning clean project structure, React fundamentals, ba
 ## Tech Stack
 
 ### Frontend
+
 - React (Vite)
 - CSS (no UI libraries)
 
 ### Backend (to be added)
+
 - Node.js
 - Express
 - MySQL
@@ -24,6 +26,7 @@ This project focuses on learning clean project structure, React fundamentals, ba
 🚧 In Progress
 
 Current stage:
+
 - Frontend project structure setup
 - Base React components created
 - Vite configuration in place
@@ -38,7 +41,11 @@ portfolio-contact/
 │ ├── src/
 │ │ ├── components/
 │ │ │ ├── Header.jsx
+│ │ │ ├── Header.module.css
+│ │ │ ├── About.jsx
+│ │ │ ├── About.module.css
 │ │ │ ├── Projects.jsx
+│ │ │ ├── Projects.module.css
 │ │ │ └── ContactForm.jsx
 │ │ ├── styles/
 │ │ │ └── main.css
@@ -54,6 +61,7 @@ portfolio-contact/
 ## Getting Started (Frontend)
 
 ### Prerequisites
+
 - Node.js (LTS)
 - npm
 
@@ -67,6 +75,7 @@ The application will be available at the URL shown in the terminal.
 ```
 
 ## Learning Goals
+
 - Understand React project structure
 - Practice component-based architecture
 - Build a clean frontend foundation
@@ -74,6 +83,7 @@ The application will be available at the URL shown in the terminal.
 - Follow disciplined Git commit practices
 
 ## Planned Features
+
 - Responsive portfolio layout
 - Projects showcase section
 - Contact form with validation
@@ -81,6 +91,6 @@ The application will be available at the URL shown in the terminal.
 - MySQL database integration
 
 ## Notes
+
 - No UI libraries are used intentionally
 - Backend and database will be added in later stages
-
