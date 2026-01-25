@@ -38,24 +38,25 @@ Current stage:
 ```text
 portfolio-contact/
 ├── frontend/
-│ ├── src/
-│ │ ├── components/
-│ │ │ ├── Header.jsx
-│ │ │ ├── Header.module.css
-│ │ │ ├── About.jsx
-│ │ │ ├── About.module.css
-│ │ │ ├── Skills.jsx
-│ │ │ ├── Skills.module.css
-│ │ │ ├── Projects.jsx
-│ │ │ ├── Projects.module.css
-│ │ │ └── ContactForm.jsx
-│ │ ├── styles/
-│ │ │ └── main.css
-│ │ ├── App.jsx
-│ │ └── main.jsx
-│ ├── index.html
-│ ├── vite.config.js
-│ └── package.json
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── Header.jsx
+│   │   │   ├── Header.module.css
+│   │   │   ├── About.jsx
+│   │   │   ├── About.module.css
+│   │   │   ├── Skills.jsx
+│   │   │   ├── Skills.module.css
+│   │   │   ├── Projects.jsx
+│   │   │   ├── Projects.module.css
+│   │   │   └── ContactForm.jsx
+│   │   ├── styles/
+│   │   │   └── main.css
+│   │   ├── App.jsx
+│   │   └── main.jsx
+│   ├── index.html
+│   ├── vite.config.js
+│   ├── package-lock.json
+│   └── package.json
 ├── .gitignore
 └── README.md
 ```
