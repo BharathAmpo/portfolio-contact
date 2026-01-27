@@ -9,7 +9,8 @@ function ContactForm() {
   });
 
   const [errors, setErrors] = useState({});
-  const [success, setSuccess] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState("");
 
   const handleChange = (e) => {
     setFormData({
@@ -38,33 +39,38 @@ function ContactForm() {
   };
 
   const handleSubmit = async (e) => {
-  e.preventDefault();
+    e.preventDefault();
 
-  if (!validate()) return;
+    if (!validate()) return;
 
-  try {
-    const response = await fetch("http://localhost:5000/contact", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formData),
-    });
+    setLoading(true);
+    setSuccess("");
 
-    const data = await response.json();
+    try {
+      const response = await fetch("http://localhost:5000/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
 
-    if (response.ok) {
-      setSuccess(true);
-      setFormData({ name: "", email: "", message: "" });
-      setErrors({});
-    } else {
-      alert(data.error || "Something went wrong");
+      const data = await response.json();
+
+      if (response.ok) {
+        setSuccess(true);
+        setFormData({ name: "", email: "", message: "" });
+        setErrors({});
+      } else {
+        setSuccess(data.error || "Something went wrong");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      setSuccess("Server error");
+    } finally {
+    setLoading(false);
     }
-  } catch (error) {
-    console.error("Error:", error);
-    alert("Server error");
-  }
-};
+  };
 
 
   return (
@@ -72,7 +78,7 @@ function ContactForm() {
       <h2 className={styles.heading}>Contact Me</h2>
 
       {success && (
-        <p className={styles.success}>Message sent successfully!</p>
+        <p className={styles.success}>{success}</p>
       )}
 
       <form onSubmit={handleSubmit} noValidate>
@@ -111,8 +117,12 @@ function ContactForm() {
           )}
         </div>
 
-        <button type="submit" className={styles.button}>
-          Send Message
+        <button
+          type="submit"
+          className={styles.button}
+          disabled={loading}
+        >
+          {loading ? "Sending..." : "Send Message"}
         </button>
       </form>
 
