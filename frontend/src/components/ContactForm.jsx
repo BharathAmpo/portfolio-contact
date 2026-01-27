@@ -37,15 +37,35 @@ function ContactForm() {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = async (e) => {
+  e.preventDefault();
 
-    if (validate()) {
+  if (!validate()) return;
+
+  try {
+    const response = await fetch("http://localhost:5000/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    });
+
+    const data = await response.json();
+
+    if (response.ok) {
       setSuccess(true);
       setFormData({ name: "", email: "", message: "" });
       setErrors({});
+    } else {
+      alert(data.error || "Something went wrong");
     }
-  };
+  } catch (error) {
+    console.error("Error:", error);
+    alert("Server error");
+  }
+};
+
 
   return (
     <section className={styles.contact}>
