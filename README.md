@@ -1,8 +1,8 @@
-# Portfolio Website with Contact Form
+# Portfolio Website with Contact Form (Full-Stack)
 
-A simple full-stack portfolio website built to understand the complete flow from frontend to backend and database.
+A full-stack portfolio website built using React, Express, and MySQL.
 
-This project focuses on learning clean project structure, React fundamentals, backend integration, and basic database handling without unnecessary abstractions.
+This project demonstrates the complete flow of data from a frontend contact form to a backend API and into a MySQL database, following clean architecture, mobile-first design, and disciplined Git practices.
 
 ---
 
@@ -11,25 +11,30 @@ This project focuses on learning clean project structure, React fundamentals, ba
 ### Frontend
 
 - React (Vite)
-- CSS (no UI libraries)
+- CSS Modules (mobile-first)
+- Plain CSS (no UI libraries)
 
-### Backend (to be added)
+### Backend
 
 - Node.js
 - Express
 - MySQL
+- dotenv
+- cors
 
 ---
 
-## Project Status
+## Features
 
-🚧 In Progress
-
-Current stage:
-
-- Frontend project structure setup
-- Base React components created
-- Vite configuration in place
+- Responsive portfolio layout
+- Header, About Me, Skills, and Projects sections
+- Contact form with controlled inputs and validation
+- Loading and success states for form submission
+- REST API to handle contact submissions
+- Data persistence using MySQL
+- Clean separation of frontend and backend
+- Secure handling of environment variables
+- Meaningful Git commit history
 
 ---
 
@@ -48,52 +53,114 @@ portfolio-contact/
 │   │   │   ├── Skills.module.css
 │   │   │   ├── Projects.jsx
 │   │   │   ├── Projects.module.css
-│   │   │   └── ContactForm.jsx
-│   │   ├── styles/
-│   │   │   └── main.css
+│   │   │   ├── ContactForm.jsx
+│   │   │   └── ContactForm.module.css
+│   │   ├── styles/main.css
 │   │   ├── App.jsx
 │   │   └── main.jsx
 │   ├── index.html
-│   ├── vite.config.js
 │   ├── package-lock.json
-│   └── package.json
+│   ├── package.json
+│   └── vite.config.js
+├── backend/
+│   ├── src/
+│   │   ├── db/connection.js
+│   │   ├── routes/contact.routes.js
+│   │   ├── app.js
+│   │   └── server.js
+│   ├── package.json
+│   ├── package-lock.json
+│   └── .env (ignored)
 ├── .gitignore
 └── README.md
 ```
 
-## Getting Started (Frontend)
+---
+
+## Getting Started
 
 ### Prerequisites
 
 - Node.js (LTS)
 - npm
+- MySQL installed and running
 
-### Setup Instructions
+---
+
+### 1. Database Setup
+
+Run the following SQL in MySQL Workbench:
+
+```sql
+CREATE DATABASE portfolio_contact;
+
+USE portfolio_contact;
+
+CREATE TABLE contacts (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(100) NOT NULL,
+  email VARCHAR(150) NOT NULL,
+  message TEXT NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+```
+
+---
+
+### 2. Backend Setup
+
+```bash
+cd backend
+npm install
+npm start
+```
+
+Server runs at: `http://localhost:5000`
+
+---
+
+### 3. Frontend Setup
+
+Open a new terminal:
 
 ```bash
 cd frontend
 npm install
 npm run dev
-The application will be available at the URL shown in the terminal.
 ```
 
-## Learning Goals
+Frontend runs at the URL shown in the terminal (usually `http://localhost:5173`).
 
-- Understand React project structure
-- Practice component-based architecture
-- Build a clean frontend foundation
-- Prepare for backend and database integration
-- Follow disciplined Git commit practices
+---
 
-## Planned Features
+## API Endpoint
 
-- Responsive portfolio layout
-- Projects showcase section
-- Contact form with validation
-- Backend API for contact submissions
-- MySQL database integration
+### POST /contact
 
-## Notes
+Accepts JSON:
 
-- No UI libraries are used intentionally
-- Backend and database will be added in later stages
+```json
+{
+  "name": "string",
+  "email": "string",
+  "message": "string"
+}
+```
+
+Stores the message in the MySQL database.
+
+---
+
+## What This Project Demonstrates
+
+- Component-based UI development with React
+- Mobile-first styling with CSS Modules
+- Controlled forms and client-side validation
+- Express server setup and routing
+- Secure database interaction using prepared statements
+- Full frontend-to-backend data flow
+- Clean, readable, and maintainable codebase
+
+---
+
+THE END
