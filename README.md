@@ -117,6 +117,17 @@ npm start
 
 Server runs at: `http://localhost:5000`
 
+## Environment Variables
+
+Create a `.env` file inside the `backend/` folder with the following variables:
+
+```env
+PORT=5000
+DB_HOST=localhost
+DB_USER=root
+DB_PASSWORD=your_mysql_password
+DB_NAME=portfolio_contact
+
 ---
 
 ### 3. Frontend Setup
