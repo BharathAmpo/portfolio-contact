@@ -117,7 +117,7 @@ npm start
 
 Server runs at: `http://localhost:5000`
 
-#### Environment Variables
+### Environment Variables
 
 Create a `.env` file inside the `backend/` folder with the following variables:
 
